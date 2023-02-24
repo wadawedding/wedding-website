@@ -760,7 +760,7 @@ Google map
         margin-top: -502px;
     }
 }
-@include media("<=desktop") {
+@include media("<desktop") {
     #map-content-wrapper {
         position: relative;
     }
@@ -780,9 +780,16 @@ Google map
   -webkit-transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
   transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
 }
-.toggle-map-content {
-  opacity: 0;
-  visibility: hidden;
+@include media(">=desktop") {
+    .toggle-map-content {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+@include media("<desktop") {
+    .toggle-map-content {
+        display: none;
+    }
 }
 .pointer-events-none {
   pointer-events: none;
