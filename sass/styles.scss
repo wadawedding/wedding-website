@@ -788,7 +788,7 @@ Google map
 }
 @include media("<desktop") {
     .toggle-map-content {
-        display: none;
+        display: none !important;
     }
 }
 .pointer-events-none {
