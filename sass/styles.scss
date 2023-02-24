@@ -8,6 +8,7 @@
 @import "partials/buttons";
 @import "partials/colors";
 @import "partials/layout";
+@import "partials/include-media";
 
 /* ==========================================================================
 Global Styles
@@ -753,9 +754,16 @@ Google map
   height: 500px;
   width: 100%;
 }
-#map-content-wrapper {
-  position: relative;
-  margin-top: -502px;
+@include media(">=desktop") {
+    #map-content-wrapper {
+        position: relative;
+        margin-top: -502px;
+    }
+}
+@include media("<=desktop") {
+    #map-content-wrapper {
+        position: relative;
+    }
 }
 #map-content {
   margin-top: 40px;
