@@ -835,7 +835,7 @@ RSVP form
         left: 30px;
         transform: translateY(-50%);
       }
-      i.fa-user, i.fa-users, i.fa-envelope, .fa-key {
+      i.fa-user, i.fa-users, i.fa-envelope, .fa-key, .fa-cutlery {
         font-size: 14px;
         position: absolute;
         top: 50%;
@@ -850,6 +850,11 @@ RSVP form
         -webkit-border-radius: 6px;
         border-radius: 6px;
         border: none;
+      }
+      select {
+        padding-left: 68px;
+        height: 55px;
+        border: solid 1px $keyline-color;
       }
       input::-webkit-input-placeholder {
         color: $form-placeholder;

@@ -215,15 +215,16 @@ $(document).ready(function () {
         var data = $(this).serialize();
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
-
-        if (MD5($('#invite_code').val()) !== 'b5af41b269f7d4efc530e7a95cba9750'
-            && MD5($('#invite_code').val()) !== 'eb0ae6e38cbfc7239a807dd973690bfa') {
+        if ($(this)[0][2].value.toLowerCase() === 'meal choice') {
+            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Please select a meal.'));
+        }
+        else if (MD5($('#invite_code').val()) !== 'b5af41b269f7d4efc530e7a95cba9750') {
             if ($(this)[0][1].value.toLowerCase().trim().indexOf("murillo") > -1 || $(this)[0][1].value.toLowerCase().trim().indexOf("hikari") > -1) {
                 $('#troll-modal').modal('show');
             }
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
         } else {
-            $.post('https://script.google.com/macros/s/AKfycbxyIkzUM5fpzdg9rHZFK3zzV-k7pQdPenCTzN0MAr_6f0SOIWrfJasjJjPdTZjyf1cU/exec', data)
+            $.post('https://script.google.com/macros/s/AKfycbxWX_4QUtWrsownzL5uS6a5-EcXeTMJQBDaJzWFbyscPKFGUHs8lGlTv-AAI-vTkpoB/exec', data)
                 .done(function (data) {
                     console.log(data);
                     if (data.result === "error") {

@@ -355,7 +355,7 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <h3 title="Clare insisted on this pun"><i>Wada</i> you waiting for?</h3>
-                <p>We would greatly appreciate if you could RSVP before the 1st of September '23</p>
+                <p>We would greatly appreciate if you could RSVP before the 1st of September '23 <br> Please rsvp individually so that we can ensure your meal is correct <br> There will also be a prime rib station at dinner in addition to your meal choice</p>
                 <form id="rsvp-form" class="rsvp-form"
                       action=""
                       method="POST">
@@ -378,10 +378,13 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0"
-                                                                  max="4"
-                                                                  placeholder="Husband/Wife or kids"
-                                                                  required>
+                                <i class="fa fa-cutlery"></i>
+                                <select class="form-control" name="meal" id="meal" form="rsvp-form" required>
+                                    <option selected disabled hidden>Meal Choice</option>
+                                    <option value="chicken">Chicken</option>
+                                    <option value="tofu">Tofu</option>
+                                    <option value="nuggets">Children's Chicken Nuggets</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6">
@@ -401,6 +404,7 @@
                         that's me!
                     </button>
                 </form>
+                <p><b>If you have any questions or problems please email us at clarejaredwadawedding@gmail.com</b></p>
             </div>
         </div>
     </div>
