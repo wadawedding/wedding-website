@@ -774,9 +774,23 @@ Google map
     }
 }
 @include media(">=desktop") {
+    @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+        #map-content-wrapper {
+            position: relative;
+        }
+        .rsvp {
+            padding-bottom: 140px;
+            .rsvp-form {
+                .form-input-group {
+                    select {
+                        -webkit-appearance: none;
+                    }
+                }
+            }
+        }
+    }
     #map-content-wrapper {
         position: relative;
-        margin-top: -502px;
     }
 }
 
