@@ -294,7 +294,7 @@ Hero
 }
 .fixed {
   position: fixed;
-  background-color: rgba(55, 36, 40, .88);
+  background-color: rgba(249, 210, 204, .88);
   z-index: 999;
   width: 100%;
 }
@@ -754,12 +754,32 @@ Google map
   height: 500px;
   width: 100%;
 }
+
+/* Safari 11+ */
+@media not all and (min-resolution:.001dpcm) and (min-width: 1024px){
+    @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+        #map-content-wrapper {
+            position: relative;
+        }
+        .rsvp {
+          padding-bottom: 140px;
+          .rsvp-form {
+            .form-input-group {
+                select {
+                    -webkit-appearance: none;
+                }
+            }
+          }
+        }
+    }
+}
 @include media(">=desktop") {
     #map-content-wrapper {
         position: relative;
         margin-top: -502px;
     }
 }
+
 @include media("<desktop") {
     #map-content-wrapper {
         position: relative;
@@ -903,7 +923,8 @@ footer {
     margin-top: -5px;
   }
   span.fa-heart {
-    color: #ff415c;
+    // Use for Icon and all hearts
+    color: #F98C86;
     font-size: 18px;
     margin: 0 2px;
   }
