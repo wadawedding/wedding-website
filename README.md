@@ -1,7 +1,6 @@
 # Wedding Website
-A beautiful, feature rich, device friendly wedding website.  
-_See [wedding.rampatra.com](http://wedding.rampatra.com/) for a demo. Use invite code `271117` to RSVP._
-
+A beautiful, feature rich, device friendly wedding website.
+See the original repo if interested in the original code.
 # Highlights
 1. Slick and fully __responsive__ design.
 2. __RSVP feature__ which directly uploads data to a Google sheet.
@@ -21,11 +20,13 @@ _See [wedding.rampatra.com](http://wedding.rampatra.com/) for a demo. Use invite
 4. That's it, open `index.html` on your browser by just double-clicking on the file.
 
 # Documentation
-I have written a 
+The original repo owner wrote a 
 [blog post describing all the features of this wedding website](https://blog.rampatra.com/wedding-website) and how to
 customize each of them according to your needs.
 
-# About Me
+However, I have made many changes to allow for multiple people to rsvp at once. 
+
+# About The Original Repo Owner
 Hello, my name is Ram. I am a Lead Software Engineer at [Mastercard R&D Labs](https://www.mastercard.com/). I enjoy making teeny tiny applications in
 my leisure time and this is one of them. Now that my wedding is over, I am open-sourcing the project. Hope you like it!
 
