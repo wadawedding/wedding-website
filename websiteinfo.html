@@ -105,6 +105,9 @@
           To do this, the github project I forked used Google Sheets. Google Sheets is basically just Google's online version of Excel. A lesser well known function of Google Sheets is the ability to attach an App Script to the sheet. This allows me to (on a small scale) host a backend service on my Google account for free.
           Basically when you submit your RSVP form the data is then automatically inserted into a Google Sheet for me. I then set up columns in that sheet to total up things like meal count and total RSVPS. This also allows me to take manual RSVPs.
           Whenever someone submits an RSVP it also send us an email that someone has RSVPd. Still deciding on whether to send out a confirmation to the user as well.
+          <br>
+          Update: Google Scripts is a real pain to work with as a free service. At least when you're trying to debug. All documentation will say that using console.log or logger.log will work to log data.
+          This is a lie. None of that works at all when deploying it as a web app. I had to create a log by basically logging the data to a separate sheet on the RSVP Google Sheet.
 
         </b></p>
       </div>
