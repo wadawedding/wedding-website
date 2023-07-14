@@ -294,7 +294,7 @@
                 <div class="col-md-4 text-center">
                     <a class="fancybox" rel="other" href="img/clareqr.jpg">
                         <div class="img-wrap">
-                            <img src="img/zelle.png" alt="zelle" style="width:250px;height:150px;/>
+                            <img src="img/zelle.png" alt="zelle" style="width:250px;height:150px;"/>
                         </div>
                     </a>
                 </div>
@@ -338,7 +338,7 @@
             <div class="col-md-6 col-md-offset-3">
                 <h3 title="Clare insisted on this pun"><i>Wada</i> you waiting for?</h3>
                 <p>We would greatly appreciate if you could RSVP before the 1st of September '23 <br> Please rsvp individually so that we can ensure your meal is correct <br> There will also be a prime rib station at dinner in addition to your meal choice</p>
-                <form id="rsvp-form" class="rsvp-form"
+                <form id="rsvp-form" class="rsvp-form" enctype="multipart/form-data"
                       action=""
                       method="POST">
                     <div class="row">
@@ -351,9 +351,26 @@
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-user"></i><input name="name" class=""
-                                                                 placeholder="Your name"
+                                <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"
+                                                                class="" min="0"
+                                                                placeholder="Invite code"
+                                                                required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-user"></i><input name="first_name" class=""
+                                                                 placeholder="First name"
                                                                  required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-user"></i><input name="last_name" class=""
+                                                             placeholder="Last name"
+                                                             required>
                             </div>
                         </div>
                     </div>
@@ -369,15 +386,8 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"
-                                                                class="" min="0"
-                                                                placeholder="Invite code"
-                                                                required>
-                            </div>
-                        </div>
                     </div>
+                    <a><b id="add-person">Add Another Person</b></a>
                     <div class="row">
                         <div class="col-md-12" id="alert-wrapper"></div>
                     </div>
@@ -386,6 +396,7 @@
                         that's me!
                     </button>
                 </form>
+
                 <p><b>If you have any questions or problems please email us at <a href = "mailto: clarejaredwadawedding@gmail.com">clarejaredwadawedding@gmail.com</a></b></p>
             </div>
         </div>

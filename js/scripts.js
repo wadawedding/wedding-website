@@ -1,3 +1,5 @@
+var addGuestCounter = 0;
+var totalAdditionalGuests = 0;
 $(document).ready(function () {
 
     /***************** Waypoints ******************/
@@ -210,9 +212,26 @@ $(document).ready(function () {
 
 
     /********************** RSVP **********************/
+
+    // Add person to rsvp
+    $('#add-person').click(
+        function () {
+            $('#add-person').before("<div id=\"guest-" + addGuestCounter+ "\"> <div class=\"row\"> <div class=\"col-md-6 col-sm-6\"> <div class=\"form-input-group\"> <i class=\"fa fa-user\"><\/i><input name=\"first_name\" class=\"\" placeholder=\"First name\" required> <\/div> <\/div> <div class=\"col-md-6 col-sm-6\"> <div class=\"form-input-group\"> <i class=\"fa fa-user\"><\/i><input name=\"last_name\" class=\"\" placeholder=\"Last name\" required> <\/div> <\/div> <\/div> <div class=\"row\"> <div class=\"col-md-6 col-sm-6\"> <div class=\"form-input-group\"> <i class=\"fa fa-cutlery\"><\/i> <select class=\"form-control\" name=\"meal\" id=\"meal\" form=\"rsvp-form\" required> <option selected disabled hidden>Meal Choice<\/option> <option value=\"chicken\">Chicken<\/option> <option value=\"tofu\">Tofu<\/option> <option value=\"nuggets\">Children's Chicken Nuggets<\/option> <\/select> <\/div> <\/div> <div class=\"col-md-6 col-sm-6\"> <a onClick=\"removePerson(\'guest-" + addGuestCounter+ "\')\"><b>Remove This Person <\/b><\/a> <\/div> <\/div> <\/div>")
+            addGuestCounter += 1;
+            totalAdditionalGuests += 1;
+        }
+    );
+
     $('#rsvp-form').on('submit', function (e) {
         e.preventDefault();
+        let isGroup = totalAdditionalGuests > 0;
+        let formData = document.querySelectorAll(
+          '#rsvp-form'
+        );
+
         var data = $(this).serialize();
+        data += '&' + $.param({'isGroup' : isGroup, 'totalExtras': totalAdditionalGuests});
+
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
         if ($(this)[0][2].value.toLowerCase() === 'meal choice') {
@@ -224,7 +243,7 @@ $(document).ready(function () {
             }
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
         } else {
-            $.post('https://script.google.com/macros/s/AKfycbxWX_4QUtWrsownzL5uS6a5-EcXeTMJQBDaJzWFbyscPKFGUHs8lGlTv-AAI-vTkpoB/exec', data)
+            $.post('https://script.google.com/macros/s/AKfycbx5nRR09zSDKb8Q7XZV7UHasQL_vXB664dvCdw7H9V13ELuTsP3KRIZn2516OwZnleC/exec', data)
                 .done(function (data) {
                     console.log(data);
                     if (data.result === "error") {
@@ -242,6 +261,7 @@ $(document).ready(function () {
     });
 
 });
+
 
 /********************** Extras **********************/
 
@@ -277,6 +297,11 @@ function initBBSRMap() {
 // alert_markup
 function alert_markup(alert_type, msg) {
     return '<div class="alert alert-' + alert_type + '" role="alert">' + msg + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span>&times;</span></button></div>';
+}
+
+var removePerson = function(num) {
+    $("#"+num).remove();
+    totalAdditionalGuests -= 1;
 }
 
 // MD5 Encoding
