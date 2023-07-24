@@ -237,9 +237,6 @@ $(document).ready(function () {
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Please select a meal.'));
         }
         else if (MD5($('#invite_code').val()) !== 'b5af41b269f7d4efc530e7a95cba9750') {
-            if ($(this)[0][1].value.toLowerCase().trim().indexOf("murillo") > -1 || $(this)[0][1].value.toLowerCase().trim().indexOf("hikari") > -1) {
-                $('#troll-modal').modal('show');
-            }
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
         } else {
             $.post('https://script.google.com/macros/s/AKfycbx5nRR09zSDKb8Q7XZV7UHasQL_vXB664dvCdw7H9V13ELuTsP3KRIZn2516OwZnleC/exec', data)
@@ -250,6 +247,24 @@ $(document).ready(function () {
                     } else {
                         $('#alert-wrapper').html('');
                         $('#rsvp-modal').modal('show');
+                        if (
+                            ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("hikari") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("tamura") > -1)
+                            || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("sunwoo") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("hong") > -1)
+                            || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("amit") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("johanis") > -1)
+                            || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("sam") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("mccollum") > -1)
+                            || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("anna") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("tran") > -1)
+                            || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("jim") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("xu") > -1)
+                            || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("alexis") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("galschiodt") > -1)
+                            || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("att") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("yuwana") > -1)
+                            || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("ian") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("walters") > -1)
+                            || (($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("matt") > -1 || $('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("matthew") > -1) && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("sturm") > -1)
+                            || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("henry") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("moore") > -1)
+                            || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("misak") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("boulatian") > -1)
+                            || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("shiva") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("sindhaval") > -1)
+                            || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("tanya") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("haddadin") > -1)
+                            || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("baker") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("haddadin") > -1)) {
+                            setTimeout( () => window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ"), 6000);
+                        }
                     }
                 })
                 .fail(function (data) {
