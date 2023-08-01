@@ -257,6 +257,7 @@ $(document).ready(function () {
                             || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("thomas") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("yamamoto") > -1)
                             || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("anna") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("tran") > -1)
                             || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("jim") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("xu") > -1)
+                            || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("esther") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("chu") > -1)
                             || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("alexis") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("galschiodt") > -1)
                             || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("att") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("yuwana") > -1)
                             || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("ian") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("walters") > -1)
