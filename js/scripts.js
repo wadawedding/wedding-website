@@ -251,6 +251,8 @@ $(document).ready(function () {
                             ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("hikari") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("tamura") > -1)
                             || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("sunwoo") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("hong") > -1)
                             || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("amit") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("johanis") > -1)
+                            || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("jordan") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("samonte") > -1)
+                            || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("melinda") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("kwong") > -1)
                             || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("sam") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("mccollum") > -1)
                             || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("jenny") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("chase") > -1)
                             || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("mari") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("shigemasa") > -1)
