@@ -383,6 +383,27 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
+    <div id="rsvp-no-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    </button>
+                    <div class="section-padding">
+                        <h3>Thank you!</h3>
+                        <p>
+                            We're sorry you can't be there on our big day!
+                            <br>
+                            You should receive an email confirmation shortly.
+                            <br>
+                            If you do not see your confirmation, please check your spam folder.
+                        </p>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -449,10 +470,18 @@
                     <div class="row">
                         <div class="col-md-12" id="alert-wrapper"></div>
                     </div>
-                    <button class="btn-fill rsvp-btn">
-                        Yes,
-                        that's me!
-                    </button>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <button class="btn-fill rsvp-btn" style="background-color:#d5e7bd" value="true" type="submit">
+                                RSVP Yes
+                            </button>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <button class="btn-fill rsvp-btn" style="background-color:#e7bdd5" value="false" type="submit">
+                                RSVP NO
+                            </button>
+                        </div>
+                    </div>
                 </form>
 
                 <p><b>If you have any questions or problems please email us at <a href = "mailto: clarejaredwadawedding@gmail.com">clarejaredwadawedding@gmail.com</a></b></p>

@@ -222,31 +222,42 @@ $(document).ready(function () {
         }
     );
 
-    $('#rsvp-form').on('submit', function (e) {
+    $(document).on("click", ":submit", function(e) {
         e.preventDefault();
         let isGroup = totalAdditionalGuests > 0;
         let formData = document.querySelectorAll(
           '#rsvp-form'
         );
 
-        var data = $(this).serialize();
-        data += '&' + $.param({'isGroup' : isGroup, 'totalExtras': totalAdditionalGuests});
+        if ($(this).val() == 'true') {
+            if (!$('#rsvp-form')[0].checkValidity()) {
+                $('#rsvp-form')[0].reportValidity()
+                return
+            }
+        }
+
+        var data = $('#rsvp-form').serialize();
+        data += '&' + $.param({'isGroup' : isGroup, 'totalExtras': totalAdditionalGuests, 'response': $(this).val()});
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
-        if ($(this)[0][2].value.toLowerCase() === 'meal choice') {
+        if ($('#rsvp-form')[0][2].value.toLowerCase() === 'meal choice') {
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Please select a meal.'));
         }
         else if (MD5($('#invite_code').val()) !== 'b5af41b269f7d4efc530e7a95cba9750') {
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
         } else {
-            $.post('https://script.google.com/macros/s/AKfycbx5nRR09zSDKb8Q7XZV7UHasQL_vXB664dvCdw7H9V13ELuTsP3KRIZn2516OwZnleC/exec', data)
+            $.post('https://script.google.com/macros/s/AKfycbwTKcFwVouimcCbShOb3NZelr2OowuJ0MYDMU7b0w2p0yS9gXMRgVKkLo1MrqgkuH_i/exec', data)
                 .done(function (data) {
                     console.log(data);
                     if (data.result === "error") {
                         $('#alert-wrapper').html(alert_markup('danger', data.message));
                     } else {
                         $('#alert-wrapper').html('');
-                        $('#rsvp-modal').modal('show');
+                        if (JSON.parse(data.data).response[0] === 'true') {
+                            $('#rsvp-modal').modal('show');
+                        } else {
+                            $('#rsvp-no-modal').modal('show');
+                        }
                         if (
                             ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("hikari") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("tamura") > -1)
                             || ($('#rsvp-form')[0][2].value.toLowerCase().trim().indexOf("sunwoo") > -1 && $('#rsvp-form')[0][3].value.toLowerCase().trim().indexOf("hong") > -1)
